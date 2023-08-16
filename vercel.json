@@ -1,0 +1,3 @@
+{
+  "devCommand": "node dev.js --port $PORT"
+}

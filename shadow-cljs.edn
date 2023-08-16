@@ -5,7 +5,7 @@
   "src/test"]
 
  :dependencies
- []
+ [[cider/cider-nrepl "0.35.0"]]
 
  :builds
  {:public
