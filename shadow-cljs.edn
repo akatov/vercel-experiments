@@ -14,5 +14,9 @@
    :asset-path "./js"
    :modules {:index {:init-fn app/init!}}
    :build-hooks [(shadow.html/copy-file "src/index.html"
-                                        "public/index.html")]
-   }}}
+                                        "public/index.html")]}
+
+  :api
+  {:target :node-library
+   :output-to "api/dist/index.js"
+   :exports-var api/main}}}

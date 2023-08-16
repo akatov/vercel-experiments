@@ -1,13 +1,10 @@
 {
   "name": "vercel-experiments",
   "scripts": {
-    "build": "yarn run build:api && yarn run build:public",
-    "build:public": "rm -rf public && shadow-cljs release :public",
-    "build:api": "rm -rf api/dist && mkdir api/dist && cp -r src/api/* api/dist"
+    "build": "rm -rf public api/dist && shadow-cljs release :api :public"
   },
   "dependencies": {
-    "cowsay": "^1.5.0",
-    "http-server": "^14.1.1"
+    "cowsay": "^1.5.0"
   },
   "devDependencies": {
     "shadow-cljs": "^2.25.2"
