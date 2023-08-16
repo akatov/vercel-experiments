@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "build": "mkdir -p .vercel/output/static && cp -r public/* .vercel/output/static"
+    "build": "rm -rf public api && mkdir public && mkdir api && cp -r src/public/* public && cp -r src/api/* api"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }

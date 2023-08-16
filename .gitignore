@@ -1,2 +1,4 @@
-.vercel
-.yarn
+/.vercel
+/.yarn
+/public
+/api
