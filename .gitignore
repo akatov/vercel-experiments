@@ -1,4 +1,4 @@
 /.vercel
 /.yarn
 /public
-/api
+/api/dist

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "rm -rf public api && mkdir public && mkdir api && cp -r src/public/* public && cp -r src/api/* api"
+    "build": "rm -rf public api/dist && mkdir public && mkdir api/dist && cp -r src/public/* public && cp -r src/api/* api/dist"
   },
   "dependencies": {
     "http-server": "^14.1.1"
