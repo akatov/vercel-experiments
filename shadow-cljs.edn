@@ -1,0 +1,18 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ []
+
+ :builds
+ {:public
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "./js"
+   :modules {:index {:init-fn app/init!}}
+   :build-hooks [(shadow.html/copy-file "src/index.html"
+                                        "public/index.html")]
+   }}}

@@ -2,3 +2,5 @@
 /.yarn
 /public
 /api/dist
+/.clj-kondo
+/.shadow-cljs
