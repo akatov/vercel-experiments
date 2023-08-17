@@ -5,7 +5,8 @@
   "src/test"]
 
  :dependencies
- [[cider/cider-nrepl "0.35.0"]]
+ [[cider/cider-nrepl "0.35.0"]
+  [macchiato/core    "0.2.24"]]
 
  :builds
  {:public
