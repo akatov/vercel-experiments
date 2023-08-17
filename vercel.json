@@ -1,3 +1,9 @@
 {
-  "devCommand": "node dev.js --port $PORT"
+  "devCommand": "node dev.js --port $PORT",
+  "rewrites": [
+    {
+      "source": "/api/:full_api_path*",
+      "destination": "/api"
+    }
+  ]
 }
