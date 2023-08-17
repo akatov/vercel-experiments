@@ -14,12 +14,10 @@
    :output-dir "public/js"
    :asset-path "./js"
    :modules {:index {:init-fn app/init!}}
-   :build-hooks [(shadow.html/copy-file "src/index.html"
-                                        "public/index.html")
-                 (shadow.html/copy-file "src/favicon.ico"
+   :build-hooks [(shadow.html/copy-file "src/favicon.ico"
                                         "public/favicon.ico")]}
 
   :api
   {:target :node-library
-   :output-to "api/dist/index.js"
+   :output-to "api/dist/_index.js"
    :exports-var api/main}}}

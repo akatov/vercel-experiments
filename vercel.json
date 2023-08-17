@@ -1,8 +1,17 @@
 {
   "devCommand": "node dev.js --port $PORT",
+  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/api/:full_api_path*",
+      "destination": "/api"
+    },
+    {
+      "source": "/:full_non_api_path*",
+      "destination": "/api"
+    },
+    {
+      "source": "/",
       "destination": "/api"
     }
   ]

@@ -6,7 +6,13 @@
    [macchiato.util.response :as r]
    ["cowsay" :refer (say)]))
 
-(defn handler [req res raise]
+(defn page-handler [req respond raise]
+  (println "normal request to" (get req :url))
+  (-> (r/ok "would normally send html")
+      (r/content-type "text/plain")
+      respond))
+
+(defn api-handler [req respond raise]
   (js/console.debug "API Endpoint Hit (debug)")
   (js/console.log "API Endpoint Hit (log)")
   (js/console.info "API Endpoint Hit (info)")
@@ -24,7 +30,14 @@
     (println "about to return body:\n" body)
     (-> (r/ok body)
         (r/content-type "text/plain")
-        res)))
+        respond)
+    (println "response sent")))
+
+(defn handler [req respond raise]
+  (let [h (if (get-in req [:query-params "full_non_api_path"])
+            page-handler
+            api-handler)]
+    (h req respond raise)))
 
 (def ^:export main
   (-> handler
