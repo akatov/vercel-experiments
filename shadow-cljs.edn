@@ -15,7 +15,9 @@
    :asset-path "./js"
    :modules {:index {:init-fn app/init!}}
    :build-hooks [(shadow.html/copy-file "src/index.html"
-                                        "public/index.html")]}
+                                        "public/index.html")
+                 (shadow.html/copy-file "src/favicon.ico"
+                                        "public/favicon.ico")]}
 
   :api
   {:target :node-library
