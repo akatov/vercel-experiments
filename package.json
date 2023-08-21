@@ -6,6 +6,7 @@
     "watch": "shadow-cljs watch :api :public"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "concat-stream": "^2.0.0",
     "cookies": "^0.8.0",
     "cowsay": "^1.5.0",
