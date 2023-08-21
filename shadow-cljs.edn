@@ -6,7 +6,8 @@
 
  :dependencies
  [[cider/cider-nrepl "0.35.0"]
-  [macchiato/core    "0.2.24"]]
+  [macchiato/core    "0.2.24"]
+  [reagent/reagent   "1.2.0"]]
 
  :builds
  {:public

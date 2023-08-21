@@ -4,13 +4,26 @@
    [macchiato.middleware.defaults :refer [site-defaults
                                           wrap-defaults]]
    [macchiato.util.response :as r]
+   [reagent.dom.server :as rds]
+
    ["cowsay" :refer (say)]))
+
+(defn html-component [name]
+  (let [greeting (str "Hello, " name)]
+    [:html
+     [:head
+      [:title greeting]]
+     [:body
+      [:h1 greeting]]]))
 
 (defn page-handler [req respond raise]
   (println "normal request to" (get req :url))
-  (-> (r/ok "would normally send html")
-      (r/content-type "text/plain")
-      respond))
+  (-> [html-component "Dmitri"]
+      rds/render-to-string
+      r/ok
+      (r/content-type "text/html")
+      respond)
+  )
 
 (defn api-handler [req respond raise]
   (js/console.debug "API Endpoint Hit (debug)")
