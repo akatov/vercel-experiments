@@ -104,6 +104,7 @@
     (println "response sent")))
 
 (defn handler [req respond raise]
+  (println "Request" req)
   (let [h (if (get-in req [:query-params "full_non_api_path"])
             page-handler
             api-handler)]
